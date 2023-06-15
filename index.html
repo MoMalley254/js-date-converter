@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Date-Converter</title>
+</head>
+<body>
+    <form id="form">
+        <label for="inputDate">Choose Date</label>
+        <input type="datetime-local" name="inputDate" id="inputDate">
+
+        <button>Save</button>
+    </form>
+    
+    <div>
+        <div>
+            <h4>Input Date</h4>
+            <span id="currentDate"></span>
+        </div>
+        <div>
+            <h4>
+                <button id="formatUno">Change to Day-Month-Year</button>
+                <span id="newDate"></span>
+            </h4>
+        </div>
+        <div>
+            <h4>
+                <button id="formatDos">Change to DD/MM/YYYY TT:TT</button>
+                <span id="newDate"></span>
+            </h4>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
