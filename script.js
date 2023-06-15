@@ -1,6 +1,9 @@
 const form = document.getElementById('form');
 const formattedDateSpan = document.getElementById('newDate');
 const formattedDateSpanDos = document.getElementById('newDateDos');
+const formattedDateSpanTres = document.getElementById('newDateTres');
+const formattedDateSpanQuatro = document.getElementById('newDateQuatro');
+const formattedDateSpanCinco = document.getElementById('newDateCinco');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -16,6 +19,18 @@ form.addEventListener('submit', (e) => {
 
     const secondFormatBtn = document.getElementById('formatDos').addEventListener('click', () => {
         secondFormat(inputDate); // Pass the inputDate as a parameter to secondFormat
+    })
+
+    const thirdFormatBtn = document.getElementById('formatTres').addEventListener('click', () => {
+        thirdFormat(inputDate); // Pass the inputDate as a parameter to secondFormat
+    })
+
+    const fourthFormatBtn = document.getElementById('formatQuatro').addEventListener('click', () => {
+        fourthFormat(inputDate); // Pass the inputDate as a parameter to secondFormat
+    })
+
+    const fifthFormatBtn = document.getElementById('formatCinco').addEventListener('click', () => {
+        fifthFormat(inputDate); // Pass the inputDate as a parameter to secondFormat
     })
 });
 
@@ -68,6 +83,22 @@ function secondFormat(dateString) {
     const month = date.getMonth() + 1; // Months are zero-based
     const year = date.getFullYear();
 
+    // Pad single-digit day, month, hours, and minutes with leading zeros
+    const formattedDay = day.toString().padStart(2, '0');
+    const formattedMonth = month.toString().padStart(2, '0');
+
+    let formattedDate = `${formattedDay}/${formattedMonth}/${year}`;
+
+    formattedDateSpanDos.textContent = formattedDate;
+}
+
+function thirdFormat(dateString) {
+    const date = new Date(dateString);
+
+    const day = date.getDate();
+    const month = date.getMonth() + 1; // Months are zero-based
+    const year = date.getFullYear();
+
     const hours = date.getHours();
     const minutes = date.getMinutes();
 
@@ -79,5 +110,25 @@ function secondFormat(dateString) {
 
     let formattedDate = `${formattedDay}/${formattedMonth}/${year} ${formattedHours}:${formattedMinutes}`;
 
-    formattedDateSpanDos.textContent = formattedDate;
+    formattedDateSpanTres.textContent = formattedDate;
+}
+
+
+function fourthFormat(dateString) {
+    const date = new Date(dateString);
+
+    const day = date.getDate();
+    const month = date.getMonth() + 1; // Months are zero-based
+    const year = date.getFullYear();
+
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    const dayOfWeek = daysOfWeek[date.getDay()];
+    const formattedMonth = months[month - 1];
+
+    const formattedDate = `${dayOfWeek}, ${formattedMonth} ${day}, ${year}`;
+      
+
+    formattedDateSpanQuatro.textContent = formattedDate;
 }
