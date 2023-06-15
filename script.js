@@ -132,3 +132,19 @@ function fourthFormat(dateString) {
 
     formattedDateSpanQuatro.textContent = formattedDate;
 }
+
+
+function fifthFormat(dateString) {
+    const date = new Date(dateString);
+
+    const day = date.getDate();
+    const month = date.getMonth() + 1; // Months are zero-based
+    const year = date.getFullYear();
+
+    const formattedDay = day.toString().padStart(2, '0');
+    const formattedMonth = month.toString().padStart(2, '0');
+
+    const formattedDate = `${year}-${formattedMonth}-${formattedDay}`;
+
+    formattedDateSpanCinco.textContent = formattedDate;
+}
